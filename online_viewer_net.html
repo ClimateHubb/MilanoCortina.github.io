@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milano-Cortina 2026 | Dossier Omnicomprensivo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --olympic-dark: #0f172a;
+            --olympic-blue: #005088;
+            --olympic-cyan: #00A3AD;
+            --snow-white: #f8fafc;
+            --accent-silver: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--snow-white);
+            color: var(--olympic-dark);
+            line-height: 1.8;
+            scroll-behavior: smooth;
+        }
+
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* Illustrazioni SVG Integrate per garantire la visualizzazione */
+        .svg-hero-bg {
+            background-color: var(--olympic-blue);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm66-3c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-40-39c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm43 38c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM46 9c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm35 53c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM57 82c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-26-2c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-8-34c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm46-40c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-44 67c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm37-42c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-26 24c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm39 7c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-10-46c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-27 30c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-27 30c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-9-54c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm44 33c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-29-54c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-22 47c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm44 33c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 22c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm10 33c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm58 45c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM9 42c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm77 4c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-66 1c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm59 24c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-32 10c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-18 14c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM16 61c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm83 7c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-40 20c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-30-45c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-35-1c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm36 31c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-32 15c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm33-31c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-30-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm0 44c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 22c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm10 33c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm58 45c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM9 42c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm77 4c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-66 1c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm59 24c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-32 10c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-18 14c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM16 61c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm83 7c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-40 20c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-30-45c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-35-1c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm36 31c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-32 15c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm33-31c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-30-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm0 44c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .sidebar-marker {
+            border-left: 4px solid var(--olympic-cyan);
+            padding-left: 1.5rem;
+        }
+
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        blockquote {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            color: var(--olympic-blue);
+            border-left: 10px solid var(--olympic-cyan);
+            padding-left: 2rem;
+            margin: 4rem 0;
+            font-style: italic;
+        }
+
+        .text-justify { text-align: justify; }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--olympic-blue);
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--olympic-cyan);
+            border-radius: 50%;
+        }
+
+        /* Nuova sezione "Highlight Box" */
+        .highlight-box {
+            background: var(--olympic-dark);
+            color: white;
+            padding: 3rem;
+            border-radius: 2rem;
+            margin: 4rem 0;
+        }
+
+        /* SVG Illustrativi */
+        .svg-container {
+            width: 100%;
+            background: #f1f5f9;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigazione -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 nav-blur">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#005088] rounded-lg flex items-center justify-center text-white font-black italic shadow-lg">MC</div>
+                <div class="flex flex-col">
+                    <span class="text-sm font-black tracking-tighter text-[#005088] leading-none uppercase">Milano Cortina</span>
+                    <span class="text-[10px] font-bold text-[#00A3AD] tracking-widest uppercase">2026 Winter Games</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                <a href="#genesi" class="hover:text-[#00A3AD] transition-colors">La Genesi</a>
+                <a href="#territori" class="hover:text-[#00A3AD] transition-colors">Cluster</a>
+                <a href="#skimo" class="hover:text-[#00A3AD] transition-colors">Dossier Skimo</a>
+                <a href="#logistica" class="hover:text-[#00A3AD] transition-colors">Innovazione</a>
+            </div>
+            <div class="text-[9px] font-black border-2 border-[#00A3AD] text-[#00A3AD] px-4 py-1.5 rounded-full uppercase tracking-tighter">
+                FUTURA / Legacy
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="svg-hero-bg h-screen flex items-center justify-center text-white px-6 text-center relative">
+        <div class="max-w-5xl z-10">
+            <div class="mb-8 flex justify-center">
+                <!-- SVG Logo Concettuale -->
+                <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 80L50 20L80 80" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M40 80L50 60L60 80" stroke="#00A3AD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="50" cy="15" r="5" fill="white" />
+                </svg>
+            </div>
+            <h1 class="text-6xl md:text-9xl font-black serif italic mb-8 leading-[0.85] tracking-tighter">Vette Italiane, <br>Orizzonti Globali.</h1>
+            <p class="text-xl md:text-2xl font-light opacity-90 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Il portale definitivo sulla XXV edizione dei Giochi Olimpici Invernali: un ecosistema di sostenibilità, sport estremi e rigenerazione urbana.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#genesi" class="bg-[#00A3AD] text-white px-10 py-4 rounded-xl font-extrabold text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-[#00A3AD]/30">Esplora il Dossier</a>
+                <div class="flex items-center gap-3 px-8 py-4 bg-white/10 rounded-xl backdrop-blur-md border border-white/20">
+                    <i class="far fa-clock text-xl text-[#00A3AD]"></i>
+                    <span class="font-bold text-xs uppercase tracking-wider">Lettura stimata: 12 min</span>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 animate-bounce">
+            <i class="fas fa-mouse text-2xl opacity-40"></i>
+        </div>
+    </section>
+
+    <!-- Introduzione: Genesi -->
+    <section id="genesi" class="py-32 max-w-5xl mx-auto px-6">
+        <div class="reveal">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="h-px w-12 bg-[#00A3AD]"></div>
+                <span class="text-[#00A3AD] font-black uppercase tracking-[0.4em] text-[10px]">Capitolo I: La Visione Politica</span>
+            </div>
+            <h2 class="text-5xl font-black mb-10 text-[#005088] tracking-tight">Dalla Svezia all'Italia: <br>Un Successo inaspettato.</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 text-justify">
+                <div class="space-y-6 text-slate-700">
+                    <p>
+                        La genesi di Milano-Cortina 2026 risale a un momento di profonda crisi per il Movimento Olimpico. Molte città candidate, spaventate dai costi esorbitanti, avevano ritirato le loro proposte. In questo scenario, l'Italia ha presentato una visione radicalmente nuova: **l'Olimpiade Diffusa**.
+                    </p>
+                    <p>
+                        Non più un singolo villaggio isolato, ma un intero arco alpino che collabora. La vittoria del 24 giugno 2019 a Losanna ha premiato la capacità di unire due metropoli diverse (Milano e Cortina) sotto un'unica bandiera, supportata da due Regioni e due Province Autonome.
+                    </p>
+                </div>
+                <div class="space-y-6 text-slate-700">
+                    <p>
+                        Il cuore pulsante di questa candidatura è **l'Agenda 2020 del CIO**, che promuove il riutilizzo delle infrastrutture esistenti. Milano-Cortina vanta il 92% di siti già pronti o temporanei. Questo significa che il budget non viene "bruciato" in costruzioni inutili, ma investito in trasporti e rigenerazione sociale.
+                    </p>
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                        <h5 class="text-xs font-black uppercase mb-3 text-[#005088]">Timeline della Vittoria</h5>
+                        <div class="timeline-item"><p class="text-xs italic">Giugno 2018: Presentazione Candidatura</p></div>
+                        <div class="timeline-item"><p class="text-xs italic">Gennaio 2019: Consegna Dossier Tecnico</p></div>
+                        <div class="timeline-item"><p class="text-xs italic">Giugno 2019: Assegnazione Ufficiale (47 voti a 34)</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SVG Visual: Il Concetto Diffuso -->
+            <div class="svg-container h-80 mt-16">
+                <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="150" r="10" fill="#005088" /> <!-- Milano -->
+                    <circle cx="350" cy="50" r="10" fill="#00A3AD" /> <!-- Cortina -->
+                    <circle cx="200" cy="100" r="8" fill="#005088" /> <!-- Valtellina -->
+                    <circle cx="280" cy="70" r="8" fill="#005088" /> <!-- Val di Fiemme -->
+                    <path d="M50 150 L200 100 L280 70 L350 50" stroke="#005088" stroke-dasharray="10 5" stroke-width="2" />
+                    <text x="35" y="175" fill="#005088" font-size="12" font-weight="bold">Milano</text>
+                    <text x="330" y="35" fill="#00A3AD" font-size="12" font-weight="bold">Cortina</text>
+                    <text x="200" y="20" fill="#64748b" font-size="10" text-anchor="middle">Oltre 22.000 km² di Territorio Olimpico</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive: I Cluster -->
+    <section id="territori" class="py-32 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 reveal">
+                <div class="md:w-1/2">
+                    <h2 class="text-5xl font-black text-[#005088] leading-tight mb-6">Il Grande Mosaico delle Sedi.</h2>
+                    <p class="text-slate-500 text-lg">Ogni disciplina ha il suo tempio naturale o urbano.</p>
+                </div>
+                <div class="md:w-1/3 p-6 bg-[#00A3AD]/5 rounded-2xl border-l-4 border-[#00A3AD]">
+                    <p class="text-sm italic text-slate-600">"Non stiamo costruendo monumenti alla gloria passata, ma laboratori per il futuro sportivo."</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Cluster Milano -->
+                <div class="reveal group">
+                    <div class="h-64 bg-slate-100 rounded-3xl mb-8 flex items-center justify-center text-slate-300 group-hover:bg-[#005088]/5 transition-colors">
+                        <i class="fas fa-city text-8xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-[#005088]">Milano: Il Cuore Tecnico</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                        Qui si giocheranno le discipline del ghiaccio più popolari. Il nuovo **PalaItalia** (Santa Giulia) sarà il polo dell'Hockey, mentre il **PalaSharp** ospiterà il grande ritorno dell'Hockey femminile. La Cerimonia d'Apertura a San Siro sarà l'evento più tecnologico della storia dei Giochi.
+                    </p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-[#00A3AD] space-y-2">
+                        <li><i class="fas fa-check-circle mr-2"></i> Hockey su Ghiaccio</li>
+                        <li><i class="fas fa-check-circle mr-2"></i> Pattinaggio di Figura</li>
+                        <li><i class="fas fa-check-circle mr-2"></i> Short Track</li>
+                    </ul>
+                </div>
+
+                <!-- Cluster Cortina -->
+                <div class="reveal group" style="transition-delay: 200ms;">
+                    <div class="h-64 bg-slate-100 rounded-3xl mb-8 flex items-center justify-center text-slate-300 group-hover:bg-[#005088]/5 transition-colors">
+                        <i class="fas fa-mountain text-8xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-[#005088]">Cortina: La Regina</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                        Cortina incarna la storia. Le gare di Sci Alpino femminile sulla **Olympia delle Tofane** vedranno le atlete sfrecciare tra le rocce dolomitiche. Il Curling troverà casa nello Stadio Olimpico del '56, restaurato per diventare un gioiello di design contemporaneo.
+                    </p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-[#00A3AD] space-y-2">
+                        <li><i class="fas fa-check-circle mr-2"></i> Sci Alpino Femminile</li>
+                        <li><i class="fas fa-check-circle mr-2"></i> Curling</li>
+                        <li><i class="fas fa-check-circle mr-2"></i> Bob / Skeleton</li>
+                    </ul>
+                </div>
+
+                <!-- Cluster Valtellina -->
+                <div class="reveal group" style="transition-delay: 400ms;">
+                    <div class="h-64 bg-slate-100 rounded-3xl mb-8 flex items-center justify-center text-slate-300 group-hover:bg-[#005088]/5 transition-colors">
+                        <i class="fas fa-snowflake text-8xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-[#005088]">Valtellina: Pura Adrenalina</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                        Bormio ospiterà lo Sci Alpino maschile sulla **Pista Stelvio**, una delle discese più pericolose e affascinanti del mondo. Livigno sarà il polo "giovane": Snowboard e Freestyle in un parco naturale trasformato in arena acrobatica.
+                    </p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-[#00A3AD] space-y-2">
+                        <li><i class="fas fa-check-circle mr-2"></i> Sci Alpino Maschile</li>
+                        <li><i class="fas fa-check-circle mr-2"></i> Snowboard / Freestyle</li>
+                        <li><i class="fas fa-check-circle mr-2"></i> Sci Alpinismo (Bormio)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enciclopedia Skimo -->
+    <section id="skimo" class="py-32 bg-[#0a192f] text-white px-6 overflow-hidden relative">
+        <!-- SVG Decorativo Sfondo -->
+        <svg class="absolute top-0 right-0 opacity-10" width="600" height="600" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#00A3AD" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.5,90,-16.2,88.5,-0.9C86.9,14.5,81.2,28.9,73,42.2C64.8,55.4,54,67.4,41,74.9C28,82.4,12.8,85.4,-1.8,88.5C-16.4,91.6,-32.8,94.8,-46.8,89.3C-60.8,83.8,-72.4,69.6,-80.6,54.8C-88.8,40.1,-93.6,24.8,-92.4,10.1C-91.2,-4.5,-83.9,-18.5,-75.7,-31.6C-67.5,-44.7,-58.3,-56.9,-46.3,-65.4C-34.3,-73.9,-19.5,-78.6,-2.4,-74.4C14.7,-70.2,29.3,-57.1,44.7,-76.4Z" transform="translate(100 100)" />
+        </svg>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="reveal mb-16">
+                <span class="text-[#00A3AD] font-black text-xs uppercase tracking-[0.5em] mb-4 block">Capitolo III: Il Debutto Storico</span>
+                <h2 class="text-6xl md:text-8xl font-black serif italic mb-8">Lo Sci Alpinismo.</h2>
+                <p class="text-xl text-white/70 max-w-2xl leading-relaxed">
+                    Per la prima volta nella storia olimpica, lo "Skimo" (Ski Mountaineering) entra nel programma ufficiale. Non è solo uno sport, è l'essenza stessa della montagna.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-start reveal">
+                <div class="space-y-12">
+                    <div>
+                        <h4 class="text-2xl font-bold text-[#00A3AD] mb-4 uppercase">Le Varianti della Sfida</h4>
+                        <p class="text-white/60 text-sm mb-6 leading-loose">
+                            Le gare olimpiche a Bormio si divideranno in:
+                            <br><br>
+                            1. **Sprint:** La gara più televisiva. Dura circa 3-4 minuti. Comprende una salita con pelli, un tratto "diamante" (a piedi con sci nello zaino) e una discesa tecnica tra porte da gigante.
+                            <br><br>
+                            2. **Individuale:** La maratona della neve. Gli atleti devono affrontare dislivelli massicci, creste affilate e discese in neve fresca. È la prova suprema di resistenza.
+                            <br><br>
+                            3. **Staffetta Mista:** Un format dinamico che unisce un atleta uomo e una donna per promuovere la parità competitiva.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-white/5 rounded-3xl border border-white/10">
+                        <h5 class="font-bold text-lg mb-6">Statistiche Atleta Elite</h5>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-white/10 pb-2">
+                                <span class="text-xs text-white/50">VO2 Max Media</span>
+                                <span class="text-xs font-black text-[#00A3AD]">88-92 ml/kg/min</span>
+                            </div>
+                            <div class="flex justify-between border-b border-white/10 pb-2">
+                                <span class="text-xs text-white/50">Peso Sci (Carbonio)</span>
+                                <span class="text-xs font-black text-[#00A3AD]">~ 720 grammi</span>
+                            </div>
+                            <div class="flex justify-between border-b border-white/10 pb-2">
+                                <span class="text-xs text-white/50">Battiti in Gara</span>
+                                <span class="text-xs font-black text-[#00A3AD]">185 - 195 BPM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-10">
+                    <div class="svg-container h-[500px] bg-white/5 border-white/10 flex flex-col p-10">
+                        <h5 class="text-white text-xs font-black uppercase mb-8 tracking-widest">Lo Sci High-Tech</h5>
+                        <!-- Illustrazione SVG Sci Alpinismo -->
+                        <svg width="200" height="400" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="45" y="10" width="10" height="180" rx="5" fill="#00A3AD" />
+                            <rect x="42" y="100" width="16" height="40" rx="2" fill="white" fill-opacity="0.2" /> <!-- Attacco -->
+                            <path d="M45 20 L55 20 L55 100 L45 100 Z" fill="white" fill-opacity="0.1" /> <!-- Pelle di foca -->
+                            <text x="50" y="195" fill="white" font-size="5" text-anchor="middle" font-weight="bold">Carbon Kevlar Core</text>
+                        </svg>
+                        <p class="text-[10px] text-white/40 mt-8 text-center italic leading-relaxed">
+                            Ogni grammo risparmiato in salita è un secondo guadagnato. Gli attacchi "Tech" pesano meno di un orologio da polso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovazione e Logistica -->
+    <section id="logistica" class="py-32 bg-slate-50 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="reveal text-center mb-20">
+                <h2 class="text-4xl font-black text-[#005088] mb-6 tracking-tight">Logistica 4.0: Connettere l'Invisibile.</h2>
+                <p class="text-slate-600 italic">"L'Olimpiade dei bit e dell'idrogeno."</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
+                <div class="card-glass p-10 rounded-3xl">
+                    <div class="w-12 h-12 bg-[#005088] rounded-xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-train"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-[#005088]">Smart Mobility</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Il piano prevede il potenziamento radicale della ferrovia Milano-Tirano. Verranno introdotti treni ad alta frequenza e autobus elettrici a guida assistita per trasportare migliaia di spettatori evitando l'intasamento delle valli alpine.
+                    </p>
+                </div>
+                <div class="card-glass p-10 rounded-3xl">
+                    <div class="w-12 h-12 bg-[#00A3AD] rounded-xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-[#00A3AD]">Digital Twin</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Milano-Cortina sarà la prima Olimpiade a utilizzare un **Digital Twin** (Gemello Digitale) dell'intero evento. Una simulazione virtuale alimentata da sensori IoT monitorerà in tempo reale energia, traffico e flussi di folla per intervenire preventivamente.
+                    </p>
+                </div>
+            </div>
+
+            <div class="highlight-box reveal">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/4">
+                        <div class="text-5xl font-black text-[#00A3AD]">5G</div>
+                        <p class="text-[10px] uppercase font-bold tracking-[0.3em] opacity-50">High Speed Broadcast</p>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h5 class="text-xl font-bold mb-3">Esperienza Immersiva FPV</h5>
+                        <p class="text-sm text-white/70 leading-relaxed">
+                            Grazie alla connettività 5G ultra-broadband, gli spettatori potranno scegliere di vedere le gare dai droni FPV o direttamente dal casco degli atleti in 4K a bassa latenza, vivendo la discesa sulla Pista Stelvio a 140 km/h.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy e Futuro -->
+    <section class="py-32 max-w-6xl mx-auto px-6 text-center">
+        <div class="reveal">
+            <h2 class="text-5xl font-black text-[#005088] mb-8 serif italic">L'Eredità: Cosa resterà domani?</h2>
+            <p class="text-slate-500 text-lg max-w-2xl mx-auto mb-16">
+                Le Olimpiadi non finiscono con la Cerimonia di Chiusura. Il successo si misura in ciò che resta ai cittadini negli anni a venire.
+            </p>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow border border-slate-50">
+                    <div class="text-4xl font-black text-[#00A3AD] mb-2">3.500</div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Alloggi Studenteschi</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow border border-slate-50">
+                    <div class="text-4xl font-black text-[#00A3AD]">100%</div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Siti Accessibili</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow border border-slate-50">
+                    <div class="text-4xl font-black text-[#00A3AD]">25k</div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Nuovi Lavori</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow border border-slate-50">
+                    <div class="text-4xl font-black text-[#00A3AD]">0</div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Siti Abbandonati</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+                <div class="max-w-xs">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-[#00A3AD] rounded flex items-center justify-center text-white font-black italic">MC</div>
+                        <span class="text-xl font-black tracking-tighter">MILANO CORTINA 2026</span>
+                    </div>
+                    <p class="text-white/40 text-xs leading-relaxed">
+                        Un progetto informativo indipendente dedicato all'eccellenza olimpica italiana e alla divulgazione delle discipline invernali.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+                    <div>
+                        <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#00A3AD] mb-6">Esplora</h6>
+                        <ul class="text-white/60 text-xs space-y-4">
+                            <li><a href="#genesi">La Visione</a></li>
+                            <li><a href="#territori">I Cluster</a></li>
+                            <li><a href="#skimo">Sci Alpinismo</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#00A3AD] mb-6">Supporto</h6>
+                        <ul class="text-white/60 text-xs space-y-4">
+                            <li>Volontari</li>
+                            <li>Accrediti Stampa</li>
+                            <li>Sponsor</li>
+                        </ul>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-[#00A3AD] mb-6">Social</h6>
+                        <div class="flex gap-6 text-xl text-white/30">
+                            <i class="fab fa-instagram hover:text-white transition-colors cursor-pointer"></i>
+                            <i class="fab fa-linkedin hover:text-white transition-colors cursor-pointer"></i>
+                            <i class="fab fa-youtube hover:text-white transition-colors cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center">
+                <p class="text-[10px] font-bold text-white/20 uppercase tracking-[0.5em]">#FUTURA2026 — Sogniamo Insieme.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animazione Scroll Reveal
+        function handleScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(r => {
+                const windowHeight = window.innerHeight;
+                const revealTop = r.getBoundingClientRect().top;
+                const revealPoint = 100;
+                if (revealTop < windowHeight - revealPoint) {
+                    r.classList.add('active');
+                }
+            });
+
+            // Effetto Navbar
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 80) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.onload = handleScroll; // Attiva subito gli elementi visibili
+    </script>
+</body>
+</html>
